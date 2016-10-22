@@ -7,7 +7,7 @@
 decryptGnomeKeyring(key_value_pairs)
 }
 \arguments{
-\item{key_value_pairs}{A list of key value pairs as expected by secret-tool (see example)}
+\item{key_value_pairs}{A string of key value pairs as expected by secret-tool (see example)}
 }
 \value{
 A decrypted password as a string.
@@ -18,7 +18,7 @@ Get a password from Gnome Keyring using secret-tool
 \examples{
 \dontrun{
 # returns the password for the key-value pair key: MYSCHEMA_MYDB
-decryptGnomeKeyring(key MYSCHEMA_MYDB)
+decryptGnomeKeyring("key MYSCHEMA_MYDB")
 }
 }
 
