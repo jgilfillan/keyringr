@@ -5,10 +5,11 @@
 #' @examples
 #' \dontrun{
 #' # returns the password for the key-value pair key: MYSCHEMA_MYDB
-#' decryptGnomeKeyring("key MYSCHEMA_MYDB")
+#' decrypt_gk_pw("key MYSCHEMA_MYDB")
 #' }
 #' @export
-decryptGnomeKeyring <- function(key_value_pairs) {
-  return(system(paste("secret-tool lookup ", key_value_pairs, sep="")))
+decrypt_gk_pw <- function(key_value_pairs) {
+  stopifnot(Sys.info()["sysname"] == "Linux")
+  return(invisible(system(paste("secret-tool lookup ", key_value_pairs, sep=""))))
 }
 
