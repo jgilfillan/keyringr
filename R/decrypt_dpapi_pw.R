@@ -13,7 +13,7 @@
 #' @examples
 #' \dontrun{
 #' # First run the command below from Powershell:
-#' # Read-Host "Enter Password" -AsSecureString |  ConvertFrom-SecureString | Out-File "C:\Temp\Password.txt"
+#' # Read-Host "PW?" -AsSecureString |  ConvertFrom-SecureString | Out-File "C:\Temp\Password.txt"
 #' # Now execute the following R commands to decrypt the password and save it in
 #' # variable "x".  Note that if run without assignment, the password will not
 #' # be displayed in the console.  Passwords must be saved to a variable or used
