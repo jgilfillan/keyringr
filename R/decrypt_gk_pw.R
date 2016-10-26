@@ -8,7 +8,7 @@
 #' @examples
 #' \dontrun{
 #' # First encrypt a password using secret-tool as follows:
-#' # secret-tool label="mylabel" db mydb user user1
+#' # secret-tool store --label=mylabel db mydb user user1
 #' # now return the password above to the R environment
 #' x <- decrypt_gk_pw("db mydb user user1")
 #'
@@ -17,7 +17,9 @@
 #' }
 #' @export
 decrypt_gk_pw <- function(key_value_pairs) {
+  # test OS is Linux
   stopifnot(Sys.info()["sysname"] == "Linux")
-  return(invisible(system(paste("secret-tool lookup ", key_value_pairs, sep=""))))
-}
+  # execute secret-tool command and invisible return result
+  invisible(system(paste("secret-tool lookup ", key_value_pairs, sep=""), intern=TRUE))
+  }
 

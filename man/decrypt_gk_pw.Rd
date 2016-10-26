@@ -23,7 +23,7 @@ Requires the Gnome Keyring and secret-tool to be installed.
 \examples{
 \dontrun{
 # First encrypt a password using secret-tool as follows:
-# secret-tool label="mylabel" db mydb user user1
+# secret-tool store --label=mylabel db mydb user user1
 # now return the password above to the R environment
 x <- decrypt_gk_pw("db mydb user user1")
 

@@ -26,6 +26,7 @@
 #' }
 #' @export
 decrypt_dpapi_pw <- function(file) {
+  # Test OS is Windows
   stopifnot(.Platform$OS.type == "windows")
   if (missing(file)) {
     warning("encrypted file argument must be defined")
@@ -33,6 +34,6 @@ decrypt_dpapi_pw <- function(file) {
     # construct command
     command <- paste('powershell -command "$PlainPassword = Get-Content ', file, '; $SecurePassword = ConvertTo-SecureString $PlainPassword; $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($SecurePassword); $UnsecurePassword = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR); echo $UnsecurePassword"', sep='')
     # execute powershell and return command
-    return(invisible(system(command, intern=TRUE)))
+    invisible(system(command, intern=TRUE))
   }
 }
