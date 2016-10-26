@@ -7,18 +7,28 @@
 decrypt_gk_pw(key_value_pairs)
 }
 \arguments{
-\item{key_value_pairs}{A string of key value pairs as expected by secret-tool (see example)}
+\item{key_value_pairs}{A string of key value pairs as expected by secret-tool}
 }
 \value{
-A decrypted password as a string.
+An decrypted password as an invisible string.  Invisible means that
+the password won't be displayed in the console, but can be assigned to a
+variable or used inline.
 }
 \description{
 Get a password from Gnome Keyring using secret-tool
 }
+\details{
+Requires the Gnome Keyring and secret-tool to be installed.
+}
 \examples{
 \dontrun{
-# returns the password for the key-value pair key: MYSCHEMA_MYDB
-decrypt_gk_pw("key MYSCHEMA_MYDB")
+# First encrypt a password using secret-tool as follows:
+# secret-tool label="mylabel" db mydb user user1
+# now return the password above to the R environment
+x <- decrypt_gk_pw("db mydb user user1")
+
+# function is best used in a connection string command:
+ch <- odbcConnect("some dsn", uid = "user1", pwd = decrypt_gk_pw("db mydb user user1"))
 }
 }
 
