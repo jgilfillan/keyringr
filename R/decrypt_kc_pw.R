@@ -13,11 +13,11 @@
 #' ch <- odbcConnect("some dsn", uid = "user1", pwd = decrypt_kc_pw("mydb_myuser"))
 #' }
 #' @export
-decrypt_kc_pw <- function(key_value_pairs) {
+decrypt_kc_pw <- function(account) {
   # test OS is Linux
   stopifnot(Sys.info()["sysname"] == "Darwin")
   # execute security command and invisible return result
-  invisible(system(paste("security 2>&1 >/dev/null find-generic-password -ga dwstats_dwpd | grep '^password' | cut -c 12- | rev | cut -c 2- | rev", sep=""), intern=TRUE))
+  invisible(system(paste("security 2>&1 >/dev/null find-generic-password -ga ", account, " | grep '^password' | cut -c 12- | rev | cut -c 2- | rev", sep=""), intern=TRUE))
 }
 
 # security 2>&1 >/dev/null find-generic-password -ga dwstats_dwpd | grep '^password' | cut -c 12- | rev | cut -c 2- | rev

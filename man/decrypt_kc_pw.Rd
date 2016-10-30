@@ -4,7 +4,7 @@
 \alias{decrypt_kc_pw}
 \title{Get a password from OSX Keyring using 'security' cli}
 \usage{
-decrypt_kc_pw(key_value_pairs)
+decrypt_kc_pw(account)
 }
 \arguments{
 \item{label}{Keychain password label}
