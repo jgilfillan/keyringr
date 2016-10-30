@@ -2,3 +2,4 @@
 
 export(decrypt_dpapi_pw)
 export(decrypt_gk_pw)
+export(decrypt_kc_pw)
