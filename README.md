@@ -12,5 +12,8 @@ channel <- odbcConnect("test", uid="ripley", pwd=decrypt_gk_pw("db test uid ripl
 ```
 
 ## decrypt_dpapi_pw()
-Notes here...
+This function utilises the [Windows Data Protection API](https://msdn.microsoft.com/en-us/library/ms995355.aspx).  Passwords must be encrypted via PowerShell prior to using the R function.  The following command encrypts a password and saves the encrypted string to c:\Temp\Password.txt:
 
+```powershell
+Read-Host "Password" -AsSecureString |  ConvertFrom-SecureString | Out-File "C:\\Temp\\Password.txt"
+```
