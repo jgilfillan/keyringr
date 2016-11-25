@@ -9,3 +9,6 @@ Description: Decrypts passwords stored in the Gnome Keyring, OSX Keychain and
 License: MIT + file LICENSE
 LazyData: TRUE
 RoxygenNote: 5.0.1
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
