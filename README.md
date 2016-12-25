@@ -62,8 +62,6 @@ Rather than retrieving and storing the password in a variable, it is better to u
 ## OSX
 In keyringr, Keychain is used to supply passwords to R in OSX.  Therefore, entries must first be defined in Keychain prior to using the `decrypt_kc_pw` function.  Again, it is beneficial to use a consistent naming convention - in this example I am using mydb_myuser
 
-![Defining a password in Keychain](kc_screenshot.png)
-
 Once a password has been saved in Keychain, it can be retrieved from within R as follows:
 
 ```r
