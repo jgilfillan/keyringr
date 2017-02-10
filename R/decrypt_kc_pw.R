@@ -21,7 +21,7 @@
 #' }
 #' @export
 decrypt_kc_pw <- function(label, type = "generic") {
-  # test OS is Linux
+  # test OS is OSX
   stopifnot(Sys.info()["sysname"] == "Darwin")
   stopifnot((type %in% c("generic","internet")))
   # execute security command and invisible return result

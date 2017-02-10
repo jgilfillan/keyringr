@@ -9,7 +9,7 @@ decrypt_kc_pw(label, type = "generic")
 \arguments{
 \item{label}{Keychain password label}
 
-\item{type}{Password type.  Either "generic" or "internet".}
+\item{type}{Leychain password type.  Either "generic" or "internet".}
 }
 \value{
 Returns a decrypted password as an invisible string.  Invisible means that
