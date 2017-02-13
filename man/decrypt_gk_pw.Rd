@@ -31,4 +31,3 @@ x <- decrypt_gk_pw("db mydb user user1")
 ch <- odbcConnect("some dsn", uid = "user1", pwd = decrypt_gk_pw("db mydb user user1"))
 }
 }
-

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_kc_account.R
 \name{get_kc_account}
 \alias{get_kc_account}
-\title{Get a account name from OSX Keychain using the 'security' cli}
+\title{Get a account name from macOS Keychain using the 'security' cli}
 \usage{
 get_kc_account(label, type = "generic")
 }
@@ -14,12 +14,12 @@ get_kc_account(label, type = "generic")
 \value{
 Returns the account value attached to the label.
 
-OSX may require the user to grant access to "security" the first time the function
+macOS may require the user to grant access to "security" the first time the function
 is run for each stored credential.  It is important to select "Always allow", which will
 prevent similar dialogs in the future.
 }
 \description{
-Get a account name from OSX Keychain using the 'security' cli
+Get a account name from macOS Keychain using the 'security' cli
 }
 \examples{
 \dontrun{
@@ -29,4 +29,3 @@ x <- get_kc_account("label")
 }
 
 }
-

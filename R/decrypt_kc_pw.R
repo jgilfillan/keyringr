@@ -1,4 +1,4 @@
-#' Get a generic password from OSX Keychain using the 'security' cli
+#' Get a generic password from macOS Keychain using the 'security' cli
 #' @param label Keychain password label
 #' @param type Leychain password type.  Either "generic" or "internet".
 #' @return Returns a decrypted password as an invisible string.  Invisible means that
@@ -7,7 +7,7 @@
 #' @details
 #' Passwords must be saved in Keychain prior to using the function.
 #'
-#' OSX may require the user to grant access to "security" the first time the function
+#' macOS may require the user to grant access to "security" the first time the function
 #' is run for each password.  It is important to select "Always allow", which will
 #' prevent similar dialogs in the future.
 #' @examples
@@ -21,7 +21,7 @@
 #' }
 #' @export
 decrypt_kc_pw <- function(label, type = "generic") {
-  # test OS is OSX
+  # test OS is macOS
   stopifnot(Sys.info()["sysname"] == "Darwin")
   stopifnot((type %in% c("generic","internet")))
   # execute security command and invisible return result

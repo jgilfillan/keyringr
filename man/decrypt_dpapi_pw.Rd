@@ -40,4 +40,3 @@ x <- decrypt_dpapi_pw("C:\\\\Temp\\\\Password.txt")
 ch <- odbcConnect("some dsn", uid = "user1", pwd = decrypt_dpapi_pw("C:\\\\Temp\\\\Password.txt"))
 }
 }
-
